@@ -11,13 +11,15 @@ namespace SharePointUpload
     {
         static void Main(string[] args)
         {
+        }
+
+        private static string SharePointAccessToken()
+        {
             // Get SharePoint Site and URI
             Uri siteUri = new Uri(ConfigurationManager.AppSettings["SiteUrl"]);
             string realm = TokenHelper.GetRealmFromTargetUrl(siteUri);
             // Get Access Token
-            string accessToken = TokenHelper.GetAppOnlyAccessToken(TokenHelper.SharePointPrincipal, siteUri.Authority, realm).AccessToken;
-
-
+            return TokenHelper.GetAppOnlyAccessToken(TokenHelper.SharePointPrincipal, siteUri.Authority, realm).AccessToken;
         }
     }
 }

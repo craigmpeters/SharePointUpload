@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using SharePointUpload.Domain;
 
-namespace SharePointUpload
+namespace SharePointUploadInterface
 {
-    public interface SharePointFileFunctions
+    public interface SharePointRepository
     {
         SharePointFileReturnDomain UploadFile(String AccessToken, String Library, String LocalFilePath, String RemoteFileName);
 
